@@ -1,24 +1,21 @@
-import { Navigate, Route, Routes, HashRouter } from 'react-router-dom';
-import { useLaunchParams, useSignal, miniApp } from '@tma.js/sdk-react';
-import { AppRoot } from '@telegram-apps/telegram-ui';
+import { AppRoot } from "@telegram-apps/telegram-ui";
+import { useLaunchParams, useSignal, miniApp } from "@tma.js/sdk-react";
 
-import { routes } from '@/navigation/routes.tsx';
+import Test from "./Test/Test";
 
 export function App() {
+  // TODO: Most useful for user data
   const lp = useLaunchParams();
+
+  // TODO: Most useful for dark/light mode
   const isDark = useSignal(miniApp.isDark);
 
   return (
     <AppRoot
-      appearance={isDark ? 'dark' : 'light'}
-      platform={['macos', 'ios'].includes(lp.tgWebAppPlatform) ? 'ios' : 'base'}
+      appearance={isDark ? "dark" : "light"}
+      platform={["macos", "ios"].includes(lp.tgWebAppPlatform) ? "ios" : "base"}
     >
-      <HashRouter>
-        <Routes>
-          {routes.map((route) => <Route key={route.path} {...route} />)}
-          <Route path="*" element={<Navigate to="/"/>}/>
-        </Routes>
-      </HashRouter>
+      <Test />
     </AppRoot>
   );
 }

@@ -1,0 +1,149 @@
+@use "./theme.scss" as *;
+
+// ========================
+// 🧩 MIXINS
+// ========================
+
+// 🔘 Primary Button
+@mixin button-primary {
+  background-color: $primary;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+
+  &:active {
+    background-color: $primary-active;
+    transform: scale(0.96);
+  }
+
+  &:disabled {
+    background-color: $border;
+    color: $text-muted;
+    cursor: not-allowed;
+  }
+}
+
+// ⚪ Secondary Button
+@mixin button-secondary {
+  background-color: $bg-secondary;
+  color: $text-primary;
+  border: 1px solid $border;
+  border-radius: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $divider;
+  }
+}
+
+// 🃏 Card
+@mixin card {
+  background-color: $bg-main;
+  border: 1px solid $border;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+// 📦 Section
+@mixin section {
+  background-color: $bg-section;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+// 🧱 Header
+@mixin header {
+  background-color: $bg-main;
+  color: $text-primary;
+  border-bottom: 1px solid $border;
+}
+
+// 📱 Bottom Bar
+@mixin bottom-bar {
+  background-color: $bg-main;
+  border-top: 1px solid $border;
+}
+
+// 🧭 Tabbar Item
+@mixin tab-item($active: false) {
+  color: if($active, $primary, $text-secondary);
+}
+
+// 📝 Text styles
+@mixin text-primary {
+  color: $text-primary;
+}
+
+@mixin text-secondary {
+  color: $text-secondary;
+}
+
+@mixin text-muted {
+  color: $text-muted;
+}
+
+// 💰 Price
+@mixin price {
+  color: $primary;
+  font-weight: 600;
+}
+
+// ❌ Old price
+@mixin old-price {
+  color: $text-muted;
+  text-decoration: line-through;
+}
+
+// ⚠️ Status colors
+@mixin status-success {
+  color: $success;
+}
+
+@mixin status-error {
+  color: $error;
+}
+
+@mixin status-warning {
+  color: $warning;
+}
+
+// ========================
+// 🚀 USAGE EXAMPLES
+// ========================
+
+.btn-primary {
+  @include button-primary;
+}
+
+.btn-secondary {
+  @include button-secondary;
+}
+
+.card {
+  @include card;
+}
+
+.header {
+  @include header;
+}
+
+.bottom-bar {
+  @include bottom-bar;
+}
+
+.price {
+  @include price;
+}
+
+.old-price {
+  @include old-price;
+}

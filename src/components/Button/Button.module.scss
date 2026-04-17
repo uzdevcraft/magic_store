@@ -1,0 +1,33 @@
+@use "../../styles/base/mixins.scss" as *;
+
+button[type="button"]:not(:disabled) {
+  transition: all 300ms ease-in-out;
+  border-radius: 8px;
+  overflow: hidden;
+
+  &:active {
+    transform: scale(0.93);
+  }
+}
+
+button[classid="btn-filled"] {
+  @include button-primary;
+}
+
+button[classid="btn-bezeled"] {
+  @include button-secondary;
+}
+
+button[classid="btn-plain"] {
+  color: var(--primary-500);
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--gray-100);
+  }
+}
+
+button[classid="btn-gray"] {
+  color: #fff;
+  background-color: var(--gray-500);
+}

@@ -15,13 +15,15 @@
     "predeploy": "npm run build"
   },
   "dependencies": {
-    "@telegram-apps/telegram-ui": "^2.1.9",
+    "@tabler/icons-react": "^3.41.1",
+    "@telegram-apps/sdk-react": "^3.3.9",
+    "@telegram-apps/telegram-ui": "^2.1.13",
     "@tma.js/sdk-react": "^3.0.8",
-    "@tonconnect/ui-react": "^2.2.0",
+    "clsx": "^2.1.1",
     "eruda": "^3.4.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.30.1"
+    "react-router-dom": "^7.14.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
@@ -37,6 +39,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "gh-pages": "^6.3.0",
     "globals": "^15.15.0",
+    "sass": "^1.99.0",
     "terser": "^5.44.0",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.40.0",

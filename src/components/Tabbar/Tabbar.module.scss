@@ -4,10 +4,10 @@
 .tabbar {
   display: flex;
   align-items: center;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  margin-inline: 8px;
-  height: 75px;
+  // border-radius: 20px;
+  // margin-bottom: 5px;
+  // margin-inline: 8px;
+  height: 65px;
   padding: 0 !important;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
@@ -17,7 +17,7 @@
 
 .tab {
   height: 100%;
-  border-radius: 20px;
+  // border-radius: 20px;
   color: var(--black) !important;
   background-color: transparent !important;
   padding: 0 !important;
@@ -27,13 +27,13 @@
   }
 
   & svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     color: var(--black) !important;
   }
 
   & > span {
-    font-size: 12px;
+    font-size: 10px;
     color: var(--black) !important;
   }
 }

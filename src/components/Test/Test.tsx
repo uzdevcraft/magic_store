@@ -1,18 +1,12 @@
-import { Button } from "../Button";
-import { Tabbar } from "@/components/Tabbar";
+import { Tabbar } from '@/components/Tabbar';
 
-import classes from "./Test.module.scss";
+import classes from './Test.module.scss';
+import { Home } from '@/pages/Home';
 
 const Test = () => {
   return (
     <main className={classes.main}>
-      <h1>Hello Test</h1>
-
-      <Button text="Test" mode="filled" />
-      <Button text="Test" mode="bezeled" />
-      <Button text="Test" mode="plain" />
-      <Button text="Test" mode="gray" />
-
+      <Home />
       <Tabbar />
     </main>
   );

@@ -1,37 +1,35 @@
 // Include Telegram UI styles first to allow our code override the package CSS.
-import "@telegram-apps/telegram-ui/dist/styles.css";
-import "@/styles/global.scss";
+import '@telegram-apps/telegram-ui/dist/styles.css';
+import '@/styles/global.scss';
 
-import ReactDOM from "react-dom/client";
-import { StrictMode } from "react";
-import { retrieveLaunchParams } from "@tma.js/sdk-react";
+import { init } from '@/init.ts';
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import { retrieveLaunchParams } from '@tma.js/sdk-react';
+import { EnvUnsupported } from '@/components/EnvUnsupported.tsx';
 
-import { Root } from "@/components/Root.tsx";
-import { EnvUnsupported } from "@/components/EnvUnsupported.tsx";
-import { init } from "@/init.ts";
+import App from '@/App.tsx';
 
 // Mock the environment in case, we are outside Telegram.
-import "./mockEnv.ts";
+import './mockEnv.ts';
 
-const root = ReactDOM.createRoot(document.getElementById("root")!);
+const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 try {
   const launchParams = retrieveLaunchParams();
   const { tgWebAppPlatform: platform } = launchParams;
-  const debug =
-    (launchParams.tgWebAppStartParam || "").includes("debug") ||
-    import.meta.env.DEV;
+  const debug = (launchParams.tgWebAppStartParam || '').includes('debug') || import.meta.env.DEV;
 
   // Configure all application dependencies.
   await init({
     debug,
-    eruda: debug && ["ios", "android"].includes(platform),
-    mockForMacOS: platform === "macos",
+    eruda: debug && ['ios', 'android'].includes(platform),
+    mockForMacOS: platform === 'macos'
   }).then(() => {
     root.render(
       <StrictMode>
-        <Root />
-      </StrictMode>,
+        <App />
+      </StrictMode>
     );
   });
 } catch (e) {

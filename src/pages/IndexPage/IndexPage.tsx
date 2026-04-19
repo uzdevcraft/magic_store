@@ -1,10 +1,8 @@
-import { type FC } from "react";
-
-import { Section, Cell, Button } from "@telegram-apps/telegram-ui";
-import { Page } from "@/components/Page.tsx";
+import { Page } from "@/components/Page";
 import { InitDataPage } from "../InitDataPage";
+import { Section, Cell, Button } from "@telegram-apps/telegram-ui";
 
-export const IndexPage: FC = () => {
+const IndexPage = () => {
   return (
     <Page back={false}>
       <Section header="Magic Store App">
@@ -19,3 +17,5 @@ export const IndexPage: FC = () => {
     </Page>
   );
 };
+
+export default IndexPage;

@@ -1,10 +1,19 @@
+import { useMemo } from 'react';
 import { Providers } from '@/containers';
-import Test from '@/components/Test/Test';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import getRoutesData from './router';
 
 const App = () => {
+  const routes = getRoutesData();
+
+  const router = useMemo(() => {
+    return createBrowserRouter(routes);
+  }, [routes]);
+
   return (
     <Providers>
-      <Test />
+      <RouterProvider router={router} />
     </Providers>
   );
 };

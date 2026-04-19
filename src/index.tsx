@@ -2,13 +2,13 @@
 import '@telegram-apps/telegram-ui/dist/styles.css';
 import '@/styles/global.scss';
 
+import App from '@/App.tsx';
+import ReactDOM from 'react-dom/client';
+
 import { init } from '@/init.ts';
 import { StrictMode } from 'react';
-import ReactDOM from 'react-dom/client';
+import { EnvUnsupported } from '@/containers';
 import { retrieveLaunchParams } from '@tma.js/sdk-react';
-import { EnvUnsupported } from '@/components/EnvUnsupported.tsx';
-
-import App from '@/App.tsx';
 
 // Mock the environment in case, we are outside Telegram.
 import './mockEnv.ts';

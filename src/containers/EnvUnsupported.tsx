@@ -1,8 +1,8 @@
+import { useMemo } from 'react';
 import { Placeholder, AppRoot } from '@telegram-apps/telegram-ui';
 import { retrieveLaunchParams, isColorDark, isRGB } from '@tma.js/sdk-react';
-import { useMemo } from 'react';
 
-export function EnvUnsupported() {
+function EnvUnsupported() {
   const [platform, isDark] = useMemo(() => {
     try {
       const lp = retrieveLaunchParams();
@@ -14,14 +14,8 @@ export function EnvUnsupported() {
   }, []);
 
   return (
-    <AppRoot
-      appearance={isDark ? 'dark' : 'light'}
-      platform={['macos', 'ios'].includes(platform) ? 'ios' : 'base'}
-    >
-      <Placeholder
-        header="Oops"
-        description="You are using too old Telegram client to run this application"
-      >
+    <AppRoot appearance={isDark ? 'dark' : 'light'} platform={['macos', 'ios'].includes(platform) ? 'ios' : 'base'}>
+      <Placeholder header="Oops" description="You are using too old Telegram client to run this application">
         <img
           alt="Telegram sticker"
           src="https://xelene.me/telegram.gif"
@@ -31,3 +25,5 @@ export function EnvUnsupported() {
     </AppRoot>
   );
 }
+
+export default EnvUnsupported;

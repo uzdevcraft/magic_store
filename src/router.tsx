@@ -12,6 +12,7 @@ const getRoutesData = (): RouteObject[] => [
     children: [
       {
         path: '/',
+        index: true,
         element: <Home />
       },
       {

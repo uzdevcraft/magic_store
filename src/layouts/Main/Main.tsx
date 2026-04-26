@@ -1,18 +1,17 @@
 import { Outlet } from 'react-router-dom';
 import { Tabbar } from '@/components/Tabbar';
+import { Header } from '@/layouts/Aspects/Header';
 
-const MainLayout = () => {
+import classes from './Main.module.scss';
+
+export default function MainLayout() {
   return (
-    <div>
-      <header>
-        <h1>Header</h1>
-      </header>
-      <main>
+    <div className={classes.container}>
+      <Header title="Magic Store" />
+      <main className={classes.main}>
         <Outlet />
       </main>
       <Tabbar />
     </div>
   );
-};
-
-export default MainLayout;
+}

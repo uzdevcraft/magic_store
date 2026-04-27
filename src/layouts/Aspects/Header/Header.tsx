@@ -1,9 +1,9 @@
 import React from 'react';
+import { IconMenu } from '@tabler/icons-react';
 import { type ActionsType, defaultActions } from './actions';
 
 import clsx from 'clsx';
 import classes from './Header.module.scss';
-import { IconMenu } from '@tabler/icons-react';
 
 interface HeaderProps {
   title?: string;

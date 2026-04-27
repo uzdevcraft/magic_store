@@ -1,0 +1,421 @@
+@use '../../styles/base/mixins.scss' as *;
+
+.root {
+  padding: 16px;
+  background: #ffffff;
+  min-height: 100vh;
+  margin-bottom: 80px;
+
+  &_section {
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &_title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #333333;
+  }
+}
+
+// Profile Header Section
+.profile_section {
+  width: 100%;
+  .profile_card {
+    width: 100%;
+    background: #fafafa;
+    border-radius: 16px;
+    border: 1px solid #d9d9d9;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile_header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .avatar_container {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    border: 2px solid #444;
+  }
+
+  .verified_badge {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    background: #10b981;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: 2px solid #fafafa;
+  }
+
+  .profile_info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .user_name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .user_email {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 2px;
+  }
+
+  .user_phone {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 12px;
+  }
+
+  .member_info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .member_badge {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #10b981 !important;
+    border: none;
+  }
+
+  .join_date {
+    font-size: 12px;
+    color: #999999;
+  }
+}
+
+// Stats Section
+.stats_section {
+  margin: 20px 0;
+  height: max-content;
+  .stats_grid {
+    display: grid !important;
+    align-items: center;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px;
+    overflow-x: scroll;
+    height: max-content;
+  }
+
+  .stat_card {
+    background: #fafafa;
+    border-radius: 12px;
+    border: 1px solid #d9d9d9;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #007aff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .stat_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .stat_icon {
+    width: 20px;
+    color: #007aff;
+    margin-bottom: 4px;
+  }
+
+  .stat_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat_number {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .stat_label {
+    font-size: 12px;
+    color: #666666;
+    margin-top: 4px;
+  }
+}
+
+// Orders Section
+.orders_section {
+  .section_title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 16px;
+  }
+
+  .orders_list {
+    background: #fafafa;
+    border-radius: 12px;
+    border: 1px solid #d9d9d9;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+
+  .order_item {
+    border-bottom: 1px solid #d9d9d9;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: #f5f5f5;
+    }
+  }
+
+  .order_icon {
+    color: #007aff;
+  }
+
+  .order_status {
+    display: flex;
+    align-items: center;
+  }
+
+  .view_all_button {
+    width: 100%;
+    height: 44px;
+    font-weight: 600;
+    border-radius: 12px;
+  }
+}
+
+// Settings Section
+.settings_section {
+  margin-top: 20px;
+  .section_title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 16px;
+  }
+
+  .settings_list {
+    background: #fafafa;
+    border-radius: 12px;
+    border: 1px solid #d9d9d9;
+    overflow: hidden;
+  }
+
+  .setting_item {
+    border-bottom: 1px solid #d9d9d9;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background: #f5f5f5;
+    }
+  }
+
+  .setting_icon {
+    color: #666666;
+  }
+
+  .chevron {
+    color: #999999;
+  }
+}
+
+// Logout Section
+.logout_section {
+  .logout_button {
+    width: 100%;
+    height: 48px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 12px;
+    border-color: #ef4444;
+    color: #ef4444;
+
+    &:hover {
+      background: #fef2f2;
+      border-color: #dc2626;
+      color: #dc2626;
+    }
+
+    &:active {
+      background: #fee2e2;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 480px) {
+  .root {
+    padding: 12px;
+  }
+
+  .profile_section {
+    .profile_header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .avatar_container {
+      align-self: center;
+    }
+
+    .member_info {
+      justify-content: center;
+    }
+  }
+
+  .stats_section {
+    .stats_grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .stat_card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+    }
+
+    .stat_content {
+      flex-direction: row;
+      gap: 12px;
+    }
+
+    .stat_info {
+      align-items: flex-start;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .profile_section {
+    .profile_header {
+      padding: 24px;
+    }
+  }
+
+  .stats_section {
+    .stats_grid {
+      gap: 16px;
+    }
+
+    .stat_card {
+      padding: 20px;
+    }
+  }
+}
+
+// Loading State
+.loading {
+  .stats_card,
+  .order_item,
+  .setting_item {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+// Animation Classes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile_section,
+.stats_section,
+.orders_section,
+.settings_section {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.orders_section {
+  animation-delay: 0.1s;
+}
+
+.settings_section {
+  animation-delay: 0.2s;
+}
+
+// Focus States
+.setting_item:focus-within {
+  background: #f5f5f5;
+  outline: 2px solid #007aff;
+  outline-offset: -2px;
+}
+
+.order_item:focus-within {
+  background: #f5f5f5;
+  outline: 2px solid #007aff;
+  outline-offset: -2px;
+}
+
+// Dark mode support (if needed)
+@media (prefers-color-scheme: dark) {
+  .root {
+    background: transparent;
+  }
+
+  .profile_card,
+  .stat_card,
+  .orders_list,
+  .settings_list {
+    // background: #2a2a2a;
+    border-color: #3a3a3a;
+  }
+
+  .order_item,
+  .setting_item {
+    border-color: #3a3a3a;
+
+    &:hover {
+      background: #333333;
+    }
+  }
+}

@@ -1,5 +1,5 @@
-@use "../../styles/base/mixins.scss" as *;
-@use "../../styles/base/theme.scss" as *;
+@use '../../styles/base/mixins.scss' as *;
+@use '../../styles/base/theme.scss' as *;
 
 .tabbar {
   display: flex;
@@ -8,8 +8,8 @@
   // margin-bottom: 5px;
   // margin-inline: 8px;
   height: 65px;
-  padding: 0 !important;
   overflow: hidden;
+  padding: 0 !important;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 
   @include bottom-bar;
@@ -34,6 +34,7 @@
 
   & > span {
     font-size: 10px;
+    font-weight: 700;
     color: var(--black) !important;
   }
 }
